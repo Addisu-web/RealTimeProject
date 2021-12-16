@@ -5,13 +5,13 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
-	<sub-flow name="TravelonTip-GetRoutes-ImplementationSub_Flow" doc:id="3a64ad9e-c4ee-47a4-a76b-3c2e9b359e4b" >
-		<db:select doc:name="Select Routes from DB TravelonTrip" doc:id="3882ad51-8ba1-4ccd-82fc-483ab4b723cf" config-ref="Database_Config">
-			<db:sql ><![CDATA[SELECT * FROM ROUTES WHERE company_name = 'FASTGO']]></db:sql>
+	<sub-flow name="TravelonTrip-GetSchedule-ImplementationSub_Flow" doc:id="81fe506a-450d-4393-9dce-b5c8ce5a921a" >
+		<db:select doc:name="Select" doc:id="b7d1ae8f-8702-4713-9bb0-8801bc859d84" config-ref="Database_Config">
+			<db:sql ><![CDATA[SELECT * FROM SCHEDULE]]></db:sql>
 		</db:select>
-		<ee:transform doc:name="Transform DB message to Json" doc:id="e4c1b7e3-6d74-4cb7-845c-ba9590e8edf4">
-			<ee:message>
-				<ee:set-payload><![CDATA[%dw 2.0
+		<ee:transform doc:name="Transform Message" doc:id="a8ca1efd-b8c3-489f-8090-d030b058a572" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
 payload]]></ee:set-payload>

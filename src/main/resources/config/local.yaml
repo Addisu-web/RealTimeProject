@@ -5,11 +5,12 @@ http:
     path: "/travelontipcall/{serviceType}"
     
 db:
-  Host: "localhost"
-  Port: "1522"
-  User: "system"
-  Password: "123"
-  Instance: "orcl"
+  oracle:
+    host: "localhost"
+    port: "1522"
+    user: "system"
+    password: "123"
+    Instance: "orcl"
  
   
   
